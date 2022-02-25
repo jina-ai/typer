@@ -1,5 +1,8 @@
-<nav class="md-nav md-nav--secondary" aria-label="{{ title }}">
-  <script>
+{% extends "base.html" %}
+
+{%- block scripts %}
+{{ super() }}
+<script>
     document.addEventListener("DOMContentLoaded", () => {
       document.querySelectorAll("qa-bot").forEach((x) => {
         x.addEventListener("keydown", (event) => {
@@ -11,7 +14,6 @@
   <qa-bot
     server="https://tiangolo-typer.docsqa.jina.ai"
     theme="follow"
-    target="_blank"
     title="Typer Docs Bot"
     description="@tiangolo"
   >
@@ -19,6 +21,7 @@
       <dt>You can ask questions about Typer. Try</dt>
       <dd>What is Typer?</dd>
       <dd>How do I use Typer?</dd>
+      <dd>What is test coverage for typer?</dd>
     </dl>
   </qa-bot>
-</nav>
+{%- endblock %}
